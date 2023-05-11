@@ -121,6 +121,7 @@ C:\Users\pc_name\Desktop\myproject> git commit -m "This is my first commit!"
  create mode 100644 newile.txt
 ```
 > The message at the end of the commit should be something related to what the commit contains - maybe it's a new feature, maybe it's a bug fix, maybe it's just fixing a typo. Don't put a message like "asdfadsf" or "foobar". That makes the other people who see your commit sad. Very, very, sad. Commits live forever in a repository (technically you can delete them if you really, really need to but it’s messy), so if you leave a clear explanation of your changes it can be extremely helpful for future programmers (perhaps future you!) who are trying to figure out why some change was made years later.
+<hr>
 
 ## Step 6: Create a new branch
 
@@ -150,6 +151,7 @@ If you are curious about the decision to use different default branch names, Git
 
 Now, if you switch back to the primary branch and make some more commits, your new branch won't see any of those changes until you [merge](https://git-scm.com/docs/git-merge) those changes onto your new branch.
 </section>
+<hr>
 
 ## Step 7: Create a new repository on GitHub
 
@@ -184,6 +186,7 @@ To https://github.com/ShaneKolkoto/new-repo.git
 Branch master set up to track remote branch master from origin.
 ```
 > `(You'll want to change the URL in the first command line to what GitHub lists in this section since your GitHub username and repo name are different.)`
+<hr>
 
 ## Step 8: Push a branch to GitHub
 
@@ -213,7 +216,7 @@ If you refresh the GitHub page, you'll see note saying a branch with your name h
 <img width="100%" src="images/git-branch.jpg">
 
 ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
-
+<hr>
 
 ## Step 9: `Create a pull request (PR)`
 
@@ -229,5 +232,108 @@ This is what the PR page looks like before you've submitted it:
 You might see a big green button at the bottom that says `Merge pull request`. Clicking this means you'll merge your changes into the primary branch..
 
 Sometimes you'll be a co-owner or the sole owner of a repo, in which case you may not need to create a PR to merge your changes. However, it's still a good idea to make one so you can keep a more complete history of your updates and to make sure you always create a new branch when making changes.
+<hr>
 
-## Step 9: Merge a PR
+## Step 10: Merge a PR
+
+> Go ahead and click the green `Merge pull request` button. This will merge your changes into the primary branch.
+
+- When you're done, I recommend _deleting your branch_ (too many branches can become messy), so hit that grey '_Delete branch_' button as well.
+
+- You can double check that your _commits_ were merged by clicking on the '_Commits_' link on the first page of your new repo.
+
+- This will show you a list of all the commits in that branch. You can see the one I just merged right up top (Merge pull request #1).
+
+- You can also see the [hash](https://git-scm.com/docs/git-hash-object) code of the commit on the right hand side. A hash code is a unique identifier for that specific commit. It's useful for referring to specific commits and when undoing changes (use the [git revert](https://git-scm.com/docs/git-revert) `<hash code number>` command to backtrack).
+<hr>
+
+## Step 11: Get changes on GitHub back to your computer
+
+> Right now, the repo on GitHub looks a little different than what you have on your local machine. For example, the commit you made in your branch and merged into the primary branch doesn't exist in the primary branch on your local machine.
+
+In order to get the most recent changes that you or others have merged on GitHub, use the `git pull origin master` command (when working on the primary branch). In most cases, this can be shortened to `git pull`.
+
+```bash
+C:\Users\pc_name\Desktop\myproject> git pull origin master
+remote: Counting objects: 1, done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), done.
+From https://github.com/ShaneKolkoto/new-repo
+ * branch            master     -> FETCH_HEAD
+   b345d9a..5381b7c  master     -> origin/master
+Merge made by the 'recursive' strategy.
+ mnelson.txt | 1 +
+ 1 file changed, 1 insertion(+)
+```
+
+> This shows you all the files that have changed and how they've changed.
+
+- Now we can use the [git log](https://git-scm.com/docs/git-log) command again to see all new commits.
+
+> (You may need to switch branches back to the primary branch. You can do that using the git checkout master command.)
+```bash
+C:\Users\pc_name\Desktop\myproject> git log
+commit 3e270876db0e5ffd3e9bfc5edede89b64b83812c
+Merge: 4f1cb17 5381b7c
+Author: Shane Kolkoto <shanekolkoto@gmail.com>
+Date:   Fri Sep 11 17:48:11 2015 -0400
+
+    Merge branch 'master' of https://github.com/ShaneKolkoto/new-repo
+
+commit 4f1cb1798b6e6890da797f98383e6337df577c2a
+Author: Shane Kolkoto <shanekolkoto@gmail.com>
+Date:   Fri Sep 11 17:48:00 2015 -0400
+
+    added a new file
+
+commit 5381b7c53212ca92151c743b4ed7dde07d9be3ce
+Merge: b345d9a 1e8dc08
+Author: Shane Kolkoto <shanekolkoto@gmail.com>
+Date:   Fri Sep 11 17:43:22 2015 -0400
+
+    Merge pull request #2 from cubeton/my-newbranch
+    
+    Added some more text to my file
+
+commit 1e8dc0830b4db8c93efd80479ea886264768520c
+Author: Shane Kolkoto <shanekolkoto@gmail.com>
+Date:   Fri Sep 11 17:06:05 2015 -0400
+
+    Added some more text to my file
+
+commit b345d9a25353037afdeaa9fcaf9f330effd157f1
+Author: Shane Kolkoto <shanekolkoto@gmail.com>
+Date:   Thu Sep 10 17:42:15 2015 -0400
+
+    This is my first commit!
+```
+
+## Step 11: Bask in your git glory
+🥳🎇🎇🎇🎇🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🎇🎇🎇🎇🥳
+> You've successfully made a PR and merged your code to the primary branch. Congratulations! If you'd like to dive deeper, check out these more advanced tutorials and resources:
+
+- [GitHub Training Kit](https://training.github.com/ )<br>
+Github’s official git cheat sheets! Handy for remembering the everyday commands you’ll use. 
+
+- [Learn Git Branching](https://learngitbranching.js.org/) <br>
+Confused or intrigued by git’s branch system? That just means you’re human! It’s one of the deepest parts of git, but also arguably the most powerful. Understanding the branch model gives you git superpowers, and this tutorial gives you a way to learn git branches in a visual, intuitive way.
+
+- [Visualizing Git](https://git-school.github.io/visualizing-git) <br>
+Another tool for exploring git visually. This one is more of an open-ended sandbox than learngitbranching.js.org
+
+- [Git-it (Desktop App)](https://github.com/jlord/git-it-electron) <br>
+A desktop application that helps you learn git through challenges you have to solve. It has a series of levels, each requiring you to use git commands to arrive at a correct answer.
+
+- [Githug](https://github.com/Gazler/githug) <br>
+If you liked git-it, Githug is another puzzle-based tutorial designed to give you a practical way of learning git.
+
+> I also recommend finding some time to work with your team on simulating a smaller group project like we did here. Have your team make a new folder with your team name, and add some files with text to it. Then, try pushing those changes to this remote repo. That way, your team can start making changes to files they didn't originally create and practice using the PR feature. And, use the git blame and git history tools on GitHub to get familiar with tracking which changes have been made in a file and who made those changes. 
+
+🥳🎇🎇🎇🎇🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🍾🎇🎇🎇🎇🥳
+<hr
+>
+⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
+
+## The more you use git, the more comfortable you'll... git with it. (I couldn't resist.)
+
+⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
