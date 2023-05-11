@@ -157,11 +157,11 @@ If you only want to keep track of your code locally, you don't need to use [GitH
 
 > To create a new repo on [GitHub](https://github.com), log in and go to the [GitHub](https://github.com) home page. You can find the “New repository” option under the `+` sign next to your profile picture, in the top right corner of the navbar:
 
-<img width="100%" src="github-add-repo.png">
+<img width="100%" src="images/github-add-repo.png">
 
 ## After clicking the button, GitHub will ask you to name your repo and provide a brief description:
 
-<img width="100%" src="github-repo-name.png">
+<img width="100%" src="images/github-repo-name.png">
 
 > When you're done filling out the information, press the 'Create repository' button to make your new repo.
 
@@ -169,7 +169,7 @@ If you only want to keep track of your code locally, you don't need to use [GitH
 
 > GitHub will ask if you want to create a new repo from scratch or if you want to add a repo you have created locally. In this case, `since we've already created a new repo locally, we want to push that onto GitHub so follow the` ....or push an existing repository from the command line' section: 
 
-<img width="100%" src="github-repo.png">
+<img width="100%" src="images/github-repo.png">
 
 ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
 
@@ -210,7 +210,7 @@ You might be wondering what that "origin" word means in the command above. What 
 
 If you refresh the GitHub page, you'll see note saying a branch with your name has just been pushed into the repository. You can also click the 'branches' link to see your branch listed there.
 
-<img width="100%" src="git-branch.jpg">
+<img width="100%" src="images/git-branch.jpg">
 
 ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
 
@@ -220,11 +220,11 @@ If you refresh the GitHub page, you'll see note saying a branch with your name h
 A pull request (or PR) is a way to alert a repo's owners that you want to make some changes to their code. It allows them to review the code and make sure it looks good before putting your changes on the primary branch.
 
 This is what the PR page looks like before you've submitted it:
-<img width="100%" src="github-pull.png">
+<img width="100%" src="images/github-pull.png">
 
 > And this is what it looks like once you've submitted the PR request:
 
-<img width="100%" src="git-merge.jpg">
+<img width="100%" src="images/git-merge.jpg">
 
 You might see a big green button at the bottom that says `Merge pull request`. Clicking this means you'll merge your changes into the primary branch..
 
